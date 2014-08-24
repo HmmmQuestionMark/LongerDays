@@ -1,0 +1,3 @@
+#This thing will multiply how long the days is.
+# 2 = 40min, 3 = 60min, 4 = 80min, etc.
+LengthMultiplier: 3
