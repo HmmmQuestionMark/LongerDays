@@ -1,46 +1,55 @@
 package dk.muj.plugins.longerdays;
 
-import java.util.List;
-import java.util.logging.Logger;
+import com.massivecraft.massivecore.MassivePlugin;
 
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.java.JavaPlugin;
+import dk.muj.plugins.longerdays.cmd.CmdLongerDaysReload;
+import dk.muj.plugins.longerdays.entity.MConf;
+import dk.muj.plugins.longerdays.entity.MConfColl;
 
-
-
-public class LongerDays extends JavaPlugin
+public class LongerDays extends MassivePlugin
 {
+	private static LongerDays i;
+	public static LongerDays get() { return i; }
+	public LongerDays() { i = this; }
+	CmdLongerDaysReload outerCmdLongerDaysReload = new CmdLongerDaysReload();
 
-	static int timeChange;
-	static List<String> worlds;
-	private static int run = 100;
-	
-	Logger log = Bukkit.getLogger();
+	static Timer timer;
+	static int schedulerTime;
 	
 	@Override
 	public void onEnable()
 	{
-	    	//Loading the config if not loaded already.
-		this.saveDefaultConfig();
+		this.preEnable();  
 		
-		//Getting values from the config
-		run = this.getConfig().getInt("Interval");
-		worlds = this.getConfig().getStringList("worlds");
-		int multiplier = getConfig().getInt("LengthMultiplier");
+		//Initialize databse
+		MConfColl.get().init();
+		schedulerTime = MConf.get().run;
 		
-		//Beginning the scheduler
-		timeChange = run - run/multiplier;
-		Timer timer = new Timer();
-		timer.runTaskTimer( this, 0 , run);
+		//Commands
+		outerCmdLongerDaysReload.register(this);
 		
+		//Start timer
+		LongerDays.enableTimer();
 		
-		log.info("[LongerDays] LongerDays is enabled");
+		this.postEnable();
 	}
 	@Override
 	public void onDisable() 
 	{
-		log.info("[LongerDays] LongerDays is disabled");
+		//Disable timer
+		LongerDays.disableTimer();
 	}
 	
+	public static void disableTimer()
+	{
+		timer.cancel();
+		timer = null;
+	}
+	
+	public static void enableTimer()
+	{
+		timer = new Timer();
+		timer.runTaskTimer( get(), schedulerTime, schedulerTime);
+	}
 	
 }
