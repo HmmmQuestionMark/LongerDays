@@ -26,5 +26,4 @@ public class MConf extends Entity<MConf>
 		"world4", 3
 
 	);
-	public int run = 120;
 }
