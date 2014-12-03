@@ -1,6 +1,7 @@
 name: LongerDays
-version: 0.1
+version: 1.2
 main: dk.muj.plugins.longerdays.LongerDays
-description: a plugin, that makes days longer
+description: A plugin that can make minecraft days longer.
+website: http://muj.dk/plugins/longerdays
 depend: [MassiveCore]
 
