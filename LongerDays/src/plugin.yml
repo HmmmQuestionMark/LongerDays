@@ -4,4 +4,5 @@ main: dk.muj.plugins.longerdays.LongerDays
 description: A plugin that can make minecraft days longer.
 website: http://muj.dk/plugins/longerdays
 depend: [MassiveCore]
+authors: [madus]
 

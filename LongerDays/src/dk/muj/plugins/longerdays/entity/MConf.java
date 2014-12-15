@@ -5,6 +5,8 @@ import java.util.Map;
 import com.massivecraft.massivecore.store.Entity;
 import com.massivecraft.massivecore.util.MUtil;
 
+import dk.muj.plugins.longerdays.DayLengthSetting;
+
 public class MConf extends Entity<MConf>
 {
 	// -------------------------------------------- //
@@ -19,11 +21,11 @@ public class MConf extends Entity<MConf>
 	// -------------------------------------------- //
 	
 	
-	public Map<String, Integer> worldTimeMultipliers = MUtil.map(
-		"world1", 3,
-		"world2", 3,
-		"world3", 3,
-		"world4", 3
+	public Map<String, DayLengthSetting> worldTimeMultipliers = MUtil.map(
+		"world1", new DayLengthSetting(),
+		"world2", new DayLengthSetting(),
+		"world3", new DayLengthSetting(),
+		"world4", new DayLengthSetting()
 
 	);
 }
