@@ -63,9 +63,9 @@ public class Timer extends BukkitRunnable
 			switch(s)
 			{
 				case SPRING: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringNightLength();
-				case SUMMER: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringNightLength();
-				case FALL: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringNightLength();
-				case WINTER: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getSpringNightLength();
+				case SUMMER: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getSummerDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getSummerNightLength();
+				case FALL: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getFallDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getFallNightLength();
+				case WINTER: return (isDay(time))  ?  MConf.get().worldTimeMultipliers.get(w.getName()).getWinterDayLength() :  MConf.get().worldTimeMultipliers.get(w.getName()).getWinterNightLength();
 				default: return 1;
 			}
 		
