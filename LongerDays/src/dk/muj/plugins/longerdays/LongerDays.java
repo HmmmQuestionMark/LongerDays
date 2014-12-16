@@ -2,6 +2,8 @@ package dk.muj.plugins.longerdays;
 
 import com.massivecraft.massivecore.MassivePlugin;
 
+import dk.muj.plugins.longerdays.cmd.CmdLongerDaysDebug;
+import dk.muj.plugins.longerdays.engine.TimeEngine;
 import dk.muj.plugins.longerdays.entity.MConfColl;
 
 public class LongerDays extends MassivePlugin
@@ -9,9 +11,11 @@ public class LongerDays extends MassivePlugin
 	private static LongerDays i;
 	public static LongerDays get() { return i; }
 	public LongerDays() { i = this; }
+	
+	
+	CmdLongerDaysDebug outerCmdLonerDaysDebug = new CmdLongerDaysDebug();
 
-	static Timer timer;
-	static int schedulerTime = 1;
+	static TimeEngine timer;
 	
 	@Override
 	public void onEnable()
@@ -22,7 +26,9 @@ public class LongerDays extends MassivePlugin
 		MConfColl.get().init();
 		
 		//Start timer
-		LongerDays.enableTimer();
+		TimeEngine.get().activate();
+		
+		outerCmdLonerDaysDebug.register(this);
 		
 		this.postEnable();
 	}
@@ -30,19 +36,6 @@ public class LongerDays extends MassivePlugin
 	public void onDisable() 
 	{
 		//Disable timer
-		LongerDays.disableTimer();
-	}
-	
-	public static void disableTimer()
-	{
-		timer.cancel();
-		timer = null;
-	}
-	
-	public static void enableTimer()
-	{
-		timer = new Timer();
-		timer.runTaskTimer( get(), schedulerTime, schedulerTime);
-	}
-	
+		TimeEngine.get().deactivate();
+	}	
 }

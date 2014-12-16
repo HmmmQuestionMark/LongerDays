@@ -28,4 +28,8 @@ public class MConf extends Entity<MConf>
 		"world4", new DayLengthSetting()
 
 	);
+
+	@Deprecated
+	public long counter = 0;
+	public int schedulerTime = 1;
 }
