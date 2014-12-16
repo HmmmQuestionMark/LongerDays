@@ -2,7 +2,7 @@ package dk.muj.plugins.longerdays;
 
 import com.massivecraft.massivecore.MassivePlugin;
 
-import dk.muj.plugins.longerdays.cmd.CmdLongerDaysDebug;
+import dk.muj.plugins.longerdays.cmd.CmdLongerDays;
 import dk.muj.plugins.longerdays.engine.TimeEngine;
 import dk.muj.plugins.longerdays.entity.MConfColl;
 
@@ -13,7 +13,7 @@ public class LongerDays extends MassivePlugin
 	public LongerDays() { i = this; }
 	
 	
-	CmdLongerDaysDebug outerCmdLonerDaysDebug = new CmdLongerDaysDebug();
+	CmdLongerDays outerCmdLongerDays = new CmdLongerDays();
 
 	static TimeEngine timer;
 	
@@ -28,7 +28,7 @@ public class LongerDays extends MassivePlugin
 		//Start timer
 		TimeEngine.get().activate();
 		
-		outerCmdLonerDaysDebug.register(this);
+		outerCmdLongerDays.register(this);
 		
 		this.postEnable();
 	}

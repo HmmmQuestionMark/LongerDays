@@ -1,11 +1,15 @@
 package dk.muj.plugins.longerdays.cmd;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 import com.massivecraft.massivecore.cmd.MassiveCommand;
-import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.arg.ARWorld;
+import com.massivecraft.massivecore.mixin.Mixin;
+import com.massivecraft.massivecore.util.Txt;
 
 import dk.muj.plugins.longerdays.LongerDaysAPI;
 import dk.muj.plugins.longerdays.entity.MConf;
@@ -15,10 +19,8 @@ public class CmdLongerDaysDebug extends MassiveCommand
 
 	public CmdLongerDaysDebug()
 	{
-		super.addAliases("ldb");
+		super.addAliases("debug");
 		super.addRequiredArg("world");
-		super.setErrorOnToManyArgs(false);
-		
 	}
 	
 	
@@ -32,19 +34,18 @@ public class CmdLongerDaysDebug extends MassiveCommand
 		int dayInYear = day % daysInYear;
 		int daysInSeason = daysInYear/4;
 		
-		sender.sendMessage("Time: "+ world.getTime());
-		sender.sendMessage("IsDay: "+ LongerDaysAPI.isDay((int) world.getTime()));
-		sender.sendMessage("Day: "+ day);
-		sender.sendMessage("DaysInyear: "+ daysInYear);
-		sender.sendMessage("DayInYear: "+ dayInYear);
-		sender.sendMessage("DaysInSeason: "+ daysInSeason);
-		sender.sendMessage("Season: "+ LongerDaysAPI.getSeason(world));
+		List<String> msgLines = new ArrayList<String>();
+		msgLines.add(Txt.titleize("Debug info "+ Mixin.getWorldDisplayName(world.getName())));
 		
-		Integer i = super.arg(1, ARInteger.get(), 0);
-		if(i == null) return;
+		msgLines.add(Txt.parse("<pink>Time: <i>"+ world.getTime()));
+		msgLines.add(Txt.parse("<pink>IsDay: <i>"+ LongerDaysAPI.isDay((int) world.getTime())));
+		msgLines.add(Txt.parse("<pink>Day: <i>"+ day));
+		msgLines.add(Txt.parse("<pink>DaysInyear: <i>"+ daysInYear));
+		msgLines.add(Txt.parse("<pink>DayInYear: <i>"+ dayInYear));
+		msgLines.add(Txt.parse("<pink>DaysInSeason: <i>"+ daysInSeason));
+		msgLines.add(Txt.parse("<pink>Season: <i>"+ LongerDaysAPI.getSeason(world)));
 		
-		world.setTime(world.getTime()+i);
-		
+		sender.sendMessage(msgLines.toArray(new String[msgLines.size()]));
 	}
 	
 }

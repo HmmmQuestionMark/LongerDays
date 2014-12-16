@@ -24,6 +24,34 @@ public class LongerDaysAPI
 		
 	}
 	
+	public static int getMultiplierNight(World w)
+	{
+		Season s = getSeason(w);
+			switch(s)
+			{
+				case SPRING: return MConf.get().worldTimeMultipliers.get(w.getName()).getSpringNightLength();
+				case SUMMER: return MConf.get().worldTimeMultipliers.get(w.getName()).getSummerNightLength();
+				case FALL: return MConf.get().worldTimeMultipliers.get(w.getName()).getFallNightLength();
+				case WINTER: return MConf.get().worldTimeMultipliers.get(w.getName()).getWinterNightLength();
+				default: return 1;
+			}
+		
+	}
+	
+	public static int getMultiplierDay(World w)
+	{
+		Season s = getSeason(w);
+			switch(s)
+			{
+				case SPRING: return MConf.get().worldTimeMultipliers.get(w.getName()).getSpringDayLength();
+				case SUMMER: return MConf.get().worldTimeMultipliers.get(w.getName()).getSummerDayLength();
+				case FALL: return MConf.get().worldTimeMultipliers.get(w.getName()).getFallDayLength();
+				case WINTER: return MConf.get().worldTimeMultipliers.get(w.getName()).getWinterDayLength();
+				default: return 1;
+			}
+		
+	}
+	
 	public static Season getSeason(World w)
 	{
 		int day = (int) (w.getFullTime()/24000);
