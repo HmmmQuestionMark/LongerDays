@@ -1,0 +1,11 @@
+com/massivecraft/longerdays/cmd/CmdLongerDaysInfo.class
+com/massivecraft/longerdays/cmd/LongerDaysCommand.class
+com/massivecraft/longerdays/LongerDaysAPI.class
+com/massivecraft/longerdays/Perm.class
+com/massivecraft/longerdays/cmd/CmdLongerDays.class
+com/massivecraft/longerdays/entity/MConf.class
+com/massivecraft/longerdays/LongerDays.class
+com/massivecraft/longerdays/entity/MConfColl.class
+com/massivecraft/longerdays/DayLengthSetting.class
+com/massivecraft/longerdays/engine/TimeEngine.class
+com/massivecraft/longerdays/cmd/CmdLongerDaysDebug.class

@@ -1,0 +1,57 @@
+main: ${project.groupId}.${project.name}
+name: ${project.name}
+version: ${project.version}
+website: ${project.url}
+description: ${project.description}
+authors: [Madus]
+depend: [MassiveCore]
+api-version: 1.13
+commands:
+  ld:
+    description: LongerDays basecommand
+    permission: longerdays.basecommand
+
+permissions:
+# -------------------------------------------- #
+# THE REAL NODES
+# -------------------------------------------- #
+  longerdays.basecommand: {description: LongerDays basecommand, default: false}
+  longerdays.debug: {description: debug, default: false}
+  longerdays.info: {description: show world info, default: false}
+# -------------------------------------------- #
+# STAR NOTATION
+# -------------------------------------------- #
+  longerdays.*:
+    children:
+      longerdays.basecommand: true
+      longerdays.debug: true
+      longerdays.info: true
+# -------------------------------------------- #
+# KITS
+# -------------------------------------------- #
+  longerdays.kit.op:
+    default: op
+    children:
+      longerdays.*: true
+  longerdays.kit.rank3:
+    default: false
+    children:
+      longerdays.kit.rank2: true
+      longerdays.config: true
+  longerdays.kit.rank2:
+    default: false
+    children:
+      longerdays.kit.rank1: true
+  longerdays.kit.rank1:
+    default: false
+    children:
+      longerdays.basecommand: true
+      longerdays.debug: true
+      longerdays.info: true
+  longerdays.kit.rank0:
+    default: false
+    children:
+  longerdays.kit.default:
+    default: true
+    children:
+      longerdays.kit.rank0: true
