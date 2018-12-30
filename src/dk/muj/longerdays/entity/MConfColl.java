@@ -1,4 +1,4 @@
-package com.massivecraft.longerdays.entity;
+package dk.muj.longerdays.entity;
 
 import com.massivecraft.massivecore.store.Coll;
 

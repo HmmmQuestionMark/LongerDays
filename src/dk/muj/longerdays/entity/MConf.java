@@ -1,8 +1,8 @@
-package com.massivecraft.longerdays.entity;
+package dk.muj.longerdays.entity;
 
 import com.massivecraft.massivecore.store.Entity;
 import com.massivecraft.massivecore.util.MUtil;
-import com.massivecraft.longerdays.DayLengthSetting;
+import dk.muj.longerdays.DayLengthSetting;
 
 import java.util.Map;
 

@@ -1,6 +1,6 @@
-package com.massivecraft.longerdays.cmd;
+package dk.muj.longerdays.cmd;
 
-import com.massivecraft.longerdays.LongerDaysAPI;
+import dk.muj.longerdays.LongerDaysAPI;
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.type.TypeWorld;
 import com.massivecraft.massivecore.mixin.MixinWorld;

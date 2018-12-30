@@ -1,8 +1,8 @@
-package com.massivecraft.longerdays;
+package dk.muj.longerdays;
 
-import com.massivecraft.longerdays.cmd.CmdLongerDays;
-import com.massivecraft.longerdays.engine.TimeEngine;
-import com.massivecraft.longerdays.entity.MConfColl;
+import dk.muj.longerdays.cmd.CmdLongerDays;
+import dk.muj.longerdays.engine.TimeEngine;
+import dk.muj.longerdays.entity.MConfColl;
 import com.massivecraft.massivecore.MassivePlugin;
 
 public class LongerDays extends MassivePlugin

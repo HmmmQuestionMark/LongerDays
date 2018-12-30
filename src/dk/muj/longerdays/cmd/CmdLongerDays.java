@@ -1,6 +1,6 @@
-package com.massivecraft.longerdays.cmd;
+package dk.muj.longerdays.cmd;
 
-import com.massivecraft.longerdays.LongerDays;
+import dk.muj.longerdays.LongerDays;
 import com.massivecraft.massivecore.command.MassiveCommandVersion;
 
 public class CmdLongerDays extends LongerDaysCommand

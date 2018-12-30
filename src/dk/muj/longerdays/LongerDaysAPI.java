@@ -1,6 +1,6 @@
-package com.massivecraft.longerdays;
+package dk.muj.longerdays;
 
-import com.massivecraft.longerdays.entity.MConf;
+import dk.muj.longerdays.entity.MConf;
 import org.bukkit.World;
 
 public class LongerDaysAPI

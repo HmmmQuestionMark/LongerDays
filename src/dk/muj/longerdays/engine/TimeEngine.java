@@ -1,8 +1,8 @@
-package com.massivecraft.longerdays.engine;
+package dk.muj.longerdays.engine;
 
-import com.massivecraft.longerdays.entity.MConf;
+import dk.muj.longerdays.entity.MConf;
 import com.massivecraft.massivecore.Engine;
-import com.massivecraft.longerdays.LongerDaysAPI;
+import dk.muj.longerdays.LongerDaysAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
 import org.bukkit.World;

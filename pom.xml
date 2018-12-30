@@ -10,7 +10,7 @@
     </parent>
 
     <!-- Basics -->
-    <groupId>com.massivecraft.longerdays</groupId>
+    <groupId>dk.muj.longerdays</groupId>
     <artifactId>LongerDays</artifactId>
     <packaging>jar</packaging>
 

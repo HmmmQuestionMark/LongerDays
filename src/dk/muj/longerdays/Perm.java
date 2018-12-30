@@ -1,4 +1,4 @@
-package com.massivecraft.longerdays;
+package dk.muj.longerdays;
 
 import com.massivecraft.massivecore.Identified;
 import com.massivecraft.massivecore.util.PermissionUtil;

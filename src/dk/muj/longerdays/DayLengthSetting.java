@@ -1,4 +1,4 @@
-package com.massivecraft.longerdays;
+package dk.muj.longerdays;
 
 public class DayLengthSetting
 {

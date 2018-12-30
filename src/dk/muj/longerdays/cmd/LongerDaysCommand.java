@@ -1,4 +1,4 @@
-package com.massivecraft.longerdays.cmd;
+package dk.muj.longerdays.cmd;
 
 import com.massivecraft.massivecore.command.MassiveCommand;
 
