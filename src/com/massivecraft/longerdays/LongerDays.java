@@ -13,7 +13,11 @@ public class LongerDays extends MassivePlugin
 
 	private static LongerDays i;
 	public static LongerDays get() { return i; }
-	public LongerDays() { i = this; }
+	public LongerDays()
+	{
+		i = this;
+		this.setVersionSynchronized(false);
+	}
 
 	// -------------------------------------------- //
 	// OVERRIDE
