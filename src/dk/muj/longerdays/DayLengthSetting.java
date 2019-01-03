@@ -17,7 +17,7 @@ public class DayLengthSetting
 	}
 	public void setDayLengthMultiplier(int summerDayLengthMultiplier)
 	{
-		this.nightLengthMultiplier = nightLengthMultiplier;
+		this.dayLengthMultiplier = dayLengthMultiplier;
 	}
 
 	public int getNightLengthMultiplier()
