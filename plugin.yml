@@ -6,11 +6,6 @@ description: ${project.description}
 authors: [Madus]
 depend: [MassiveCore]
 api-version: 1.13
-commands:
-  ld:
-    description: LongerDays basecommand
-    permission: longerdays.basecommand
-
 permissions:
 # -------------------------------------------- #
 # THE REAL NODES
